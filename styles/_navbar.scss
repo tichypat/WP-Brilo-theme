@@ -1,0 +1,81 @@
+// Navbar
+.navbar {
+    background-color: $primary;
+    padding: 1rem 2rem;
+    margin: 0 .5rem 0 .5rem;
+
+    // Navbar brand
+    .navbar-brand {
+        img {
+            height: 5rem;
+        }
+    }
+
+    // Menu elements
+    .menu-item {
+        margin: 0 1rem;
+
+        a{
+            display: inline-block;
+            color: white;
+            text-decoration: none;
+            text-transform: uppercase;
+            font-weight: 100;
+            position: relative;
+
+            @media only screen and (max-width: $md) {
+                font-size:  2rem;
+            }
+
+            @media only screen and (max-width: $sm) {
+                font-size:  3rem;
+            }
+        }
+
+        a::after{
+            content: '';
+            position: absolute;
+            width: 100%;
+            transform: scaleX(0);
+            height: 1px;
+            bottom: 0;
+            left: 0;
+            background-color: white;
+            transform-origin: bottom right;
+            transition: transform 0.3s ease-out;
+        }
+        a:hover::after{
+            transform: scaleX(1);
+            transform-origin: bottom left;
+        }
+    }
+
+    button {
+        border-style: none;
+    }
+
+    button:focus {
+        outline: none;
+    }
+
+    // Offcanvas
+    .offcanvas{
+        background-color: $base;
+
+        @media only screen and (max-width: $sm) {
+            width: 90%;
+        }
+
+        .offcanvas-header{
+            padding: 1rem 2rem;
+            margin: 0 0.5rem 0 0.5rem;
+        }
+    }
+
+    .collapse-btn, .collapse-btn-close{
+        background-color: transparent;
+        img{
+            height: 3rem;
+        }
+    }
+}
