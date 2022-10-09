@@ -6,6 +6,70 @@
 
 main.front-page {
 
+    //Header styles
+    .header-about{
+        img{
+            height: 20rem;
+        }
+    }
+
+    //Portfolio styles
+    .portfolio{
+
+        .portfolio-item{
+
+            .portfolio-item-image{
+                overflow: hidden;
+
+                .portfolio-item-image-rectangle{
+                    width: 90%;
+                    height: 90%;
+                    border: 1px solid lightgray;
+                    left: 5%;
+                    top: 5%;
+                    transition: .3s;
+                    z-index: 1;
+                }
+
+                img{
+                    transition: .3s;
+                }
+            }
+
+            .portfolio-item-info{  
+                background-color: $secondary;
+
+                @media only screen and (max-width: $lg) {
+                    h3{
+                        min-height: 3rem;
+                    }
+                }
+
+                @media only screen and (max-width: $md) {
+                    h3{
+                        min-height: auto;
+                    }
+                }
+            }
+        }
+
+        .portfolio-item:hover{
+
+            .portfolio-item-image{
+
+                .portfolio-item-image-rectangle{
+                    width: 100%;
+                    height: 100%;
+                    left: 0;
+                    top: 0;
+                }
+
+                img{
+                    transform: scale(1.2);
+                }
+            }
+        }
+    }
 }
 
 @import "_single.scss";

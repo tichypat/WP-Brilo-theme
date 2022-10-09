@@ -5,6 +5,9 @@ function load_stylesheets() {
     wp_register_style( 'bootstrap', get_template_directory_uri() . "/assets/css/bootstrap.min.css" );
     wp_enqueue_style('bootstrap');
 
+    wp_register_style( 'AOS', 'https://unpkg.com/aos@2.3.1/dist/aos.css' );
+    wp_enqueue_style('AOS');
+
 }
 add_action ( 'wp_enqueue_scripts', 'load_stylesheets' );
 
@@ -16,8 +19,12 @@ function load_scripts(){
     wp_register_script('bootstrap',  get_template_directory_uri() . "/assets/js/bootstrap.min.js", '', null, true);
     wp_enqueue_script('bootstrap');
 
+    wp_register_script( 'AOS', 'https://unpkg.com/aos@2.3.1/dist/aos.js', null, null, true );
+    wp_enqueue_script('AOS');
+
     wp_register_script('scripts',  get_template_directory_uri() . "/assets/js/scripts.js", '', null, true);
     wp_enqueue_script('scripts');
+
 }
 add_action('wp_enqueue_scripts', 'load_scripts');
 
@@ -27,6 +34,8 @@ function load_bs5_nav_walker() {
 }
 add_action('init', 'load_bs5_nav_walker');
 
+//Adds support for title tag
+add_theme_support( 'title-tag' );
 
 //Adds thumbnail option for posts 
 add_theme_support( 'post-thumbnails' );

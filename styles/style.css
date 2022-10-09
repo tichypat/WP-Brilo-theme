@@ -57,47 +57,52 @@ body::-moz-selection {
   color: white;
 }
 
+h1, h2, h3, h4, h5, h6 {
+  font-weight: 100;
+  text-transform: uppercase;
+}
+
 h1 {
   font-size: 2.2rem;
 }
 
 h2 {
-  font-size: 1.9rem;
-}
-
-h3 {
-  font-size: 1.7rem;
-}
-
-h4 {
   font-size: 1.5rem;
 }
 
-h5 {
+h3 {
   font-size: 1.3rem;
+  font-weight: 300;
 }
 
-h6 {
+h4 {
   font-size: 1.1rem;
 }
 
-span {
+p, span, a {
   font-size: 1rem;
+  font-weight: 300;
+  margin-bottom: 0;
 }
 
-p {
-  font-size: 1rem;
+a {
+  text-decoration: none;
 }
 
-.btn.btn-base {
-  background-color: blue;
+.btn.btn-primary {
+  background-color: #3597a6;
   color: white;
   -webkit-transition: .3s;
   transition: .3s;
+  text-transform: uppercase;
+  border-radius: 0;
+  border: none;
+  padding: 0.1rem 4rem 0.1rem 4rem;
+  font-weight: 300;
 }
 
-.btn.btn-base:hover {
-  color: black;
+.btn.btn-primary:hover {
+  background-color: #1f464e;
 }
 
 .navbar {
@@ -111,7 +116,7 @@ p {
 }
 
 .navbar .menu-item {
-  margin: 0 1rem;
+  margin: 0 0 0 1rem;
 }
 
 .navbar .menu-item a {
@@ -189,5 +194,57 @@ p {
 
 .navbar .collapse-btn img, .navbar .collapse-btn-close img {
   height: 3rem;
+}
+
+main.front-page .header-about img {
+  height: 20rem;
+}
+
+main.front-page .portfolio .portfolio-item .portfolio-item-image {
+  overflow: hidden;
+}
+
+main.front-page .portfolio .portfolio-item .portfolio-item-image .portfolio-item-image-rectangle {
+  width: 90%;
+  height: 90%;
+  border: 1px solid lightgray;
+  left: 5%;
+  top: 5%;
+  -webkit-transition: .3s;
+  transition: .3s;
+  z-index: 1;
+}
+
+main.front-page .portfolio .portfolio-item .portfolio-item-image img {
+  -webkit-transition: .3s;
+  transition: .3s;
+}
+
+main.front-page .portfolio .portfolio-item .portfolio-item-info {
+  background-color: #3597a6;
+}
+
+@media only screen and (max-width: 991.98px) {
+  main.front-page .portfolio .portfolio-item .portfolio-item-info h3 {
+    min-height: 3rem;
+  }
+}
+
+@media only screen and (max-width: 767.98px) {
+  main.front-page .portfolio .portfolio-item .portfolio-item-info h3 {
+    min-height: auto;
+  }
+}
+
+main.front-page .portfolio .portfolio-item:hover .portfolio-item-image .portfolio-item-image-rectangle {
+  width: 100%;
+  height: 100%;
+  left: 0;
+  top: 0;
+}
+
+main.front-page .portfolio .portfolio-item:hover .portfolio-item-image img {
+  -webkit-transform: scale(1.2);
+          transform: scale(1.2);
 }
 /*# sourceMappingURL=style.css.map */
